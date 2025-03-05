@@ -1,0 +1,76 @@
+1. a)32 and 64
+2. b)int to long
+3. a)-127
+4. b)int[] A={1,2,3}
+5. b)object
+6. c)bc
+7. d)-1
+8. b)void
+9. a)3
+10. b)stack
+11. d)6
+12. a)right shift operator
+13. b)use of pointers
+14. d)default
+15. b)compilation error
+16. b)private
+17. a)the condition to end the recursion
+18. a)5 4 3 2 1
+19. a)/* comment */
+20. a)final
+
+
+
+
+
+
+public class SumOfDigits {
+    
+    // Recursive method to calculate the sum of digits
+    public static int sumOfDigits(int num) {
+        // Base case: when num becomes 0, return 0
+        if (num == 0) {
+            return 0;
+        }
+        // Recursive case: num % 10 gives the last digit, num / 10 reduces the number
+        return (num % 10) + sumOfDigits(num / 10);
+    }
+
+    public static void main(String[] args) {
+        int number = 1234;
+        int result = sumOfDigits(number);
+        System.out.println("Sum of digits of " + number + " is: " + result);
+    }
+}
+
+
+
+public class Palindrome {
+    
+    // Recursive method to check if a string is a palindrome
+    public static boolean isPalindrome(String str, int left, int right) {
+        // Base case: If the left index is greater than or equal to the right, it's a palindrome
+        if (left >= right) {
+            return true;
+        }
+
+        // If characters at the left and right indexes don't match, it's not a palindrome
+        if (str.charAt(left) != str.charAt(right)) {
+            return false;
+        }
+
+        // Recursive case: check the remaining substring
+        return isPalindrome(str, left + 1, right - 1);
+    }
+
+    public static void main(String[] args) {
+        String str = "madam";
+        
+        // Call the recursive method with initial indices (0 for left, str.length() - 1 for right)
+        if (isPalindrome(str, 0, str.length() - 1)) {
+            System.out.println(str + " is a palindrome.");
+        } else {
+            System.out.println(str + " is not a palindrome.");
+        }
+    }
+}

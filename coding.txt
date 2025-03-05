@@ -1,0 +1,51 @@
+1) sum of digits using recursion.
+   import java.util.Scanner;
+   public class Main{
+	public static void main(String args[]){
+          Scanner sc=new Scanner(System.in);
+	  System.out.println("enter number:");
+          int num=sc.nextInt();
+          System.out.println(sumDig(num));
+    }
+  public static int sumDig(int num){
+      if(num==0){
+         return 0;
+     }else{
+        return (num%10)+sumDig(num/10);
+     }
+  }
+}
+
+2)Palindrome
+
+
+
+
+public class Palindrome {
+    
+    // Recursive method to check if a string is a palindrome
+    public static boolean isPalindrome(String str, int left, int right) {
+        // Base case: If the left index is greater than or equal to the right, it's a palindrome
+        if (left >= right) {
+            return true;
+        }
+
+        // If characters at the left and right indexes don't match, it's not a palindrome
+        if (str.charAt(left) != str.charAt(right)) {
+            return false;
+        }
+
+        // Recursive case: check the remaining substring
+        return isPalindrome(str, left + 1, right - 1);
+    }
+
+    public static void main(String[] args) {
+        String str = "madam";
+        
+              if (isPalindrome(str, 0, str.length() - 1)) {
+            System.out.println(str + " is a palindrome.");
+        } else {
+            System.out.println(str + " is not a palindrome.");
+        }
+    }
+}
